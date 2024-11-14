@@ -83,7 +83,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_mode', help="use which database, [casia, vgg, ms1m, retina, ms1mr]",default='ms1m', type=str)
     parser.add_argument('--net', help="which network, ['IR_50', 'IR_101', 'MobileFaceNet']",default='IR_50', type=str)
     parser.add_argument('--head', help="head type, ['Softmax', 'ArcFace', 'CosFace', 'SphereFace', 'Am_softmax']", default='ArcFace', type=str)
-    parser.add_argument('--target', help="verification targets", default='lfw,talfw,sllfw,calfw,cplfw,cfp_fp,agedb_30', type=str)
+    parser.add_argument('--target', help="verification targets", default='lfw', type=str)
     parser.add_argument('--resume_backbone', help="resume backbone model", default='', type=str)
     parser.add_argument('--resume_head', help="resume head model", default='', type=str)
     parser.add_argument('--outdir', help="output dir", default='test_dir', type=str)

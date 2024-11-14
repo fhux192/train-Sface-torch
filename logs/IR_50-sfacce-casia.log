@@ -1,0 +1,15 @@
+GPU_ID [0, 1]
+============================================================
+Overall Configurations:
+{'SEED': 1337, 'INPUT_SIZE': [112, 112], 'EMBEDDING_SIZE': 512, 'DROP_LAST': True, 'WEIGHT_DECAY': 0.0005, 'MOMENTUM': 0.9, 'GPU_ID': [0, 1], 'DEVICE': device(type='cuda', index=0), 'MULTI_GPU': True, 'NUM_EPOCH': 125, 'STAGES': [50, 70, 80], 'LR': 0.1, 'BATCH_SIZE': 256, 'DATA_ROOT': '/home/asus/FacialData/positive/', 'EVAL_PATH': '../eval/', 'BACKBONE_NAME': 'IR_50', 'HEAD_NAME': 'ArcFace', 'TARGET': ['lfw'], 'BACKBONE_RESUME_ROOT': '', 'HEAD_RESUME_ROOT': '', 'WORK_PATH': './results/IR_50-sface-casia'}
+============================================================
+/home/asus/FacialData/positive/train.rec /home/asus/FacialData/positive/train.idx
+Number of Training Classes: 1098
+Traceback (most recent call last):
+  File "/home/asus/Downloads/SFace-main/SFace_torch/train_SFace_torch.py", line 145, in <module>
+    vers = get_val_data(EVAL_PATH, TARGET)
+  File "/home/asus/Downloads/SFace-main/SFace_torch/util/utils.py", line 63, in get_val_data
+    data_set, issame = get_val_pair(data_path, t)
+  File "/home/asus/Downloads/SFace-main/SFace_torch/util/utils.py", line 53, in get_val_pair
+    assert os.path.exists(ver_path)
+AssertionError

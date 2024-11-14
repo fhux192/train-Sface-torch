@@ -41,7 +41,7 @@ def get_config(args):
     configuration['BATCH_SIZE'] = args.batch_size
 
     if args.data_mode == 'casia':
-        configuration['DATA_ROOT'] = '../datasets/faces_webface_112x112/' # the dir for training
+        configuration['DATA_ROOT'] = '/home/asus/FacialData/positive/' # the dir for training
     else:
         raise Exception(args.data_mode)
 
