@@ -1,10 +1,10 @@
 GPU_ID [0]
 ============================================================
 Overall Configurations:
-{'SEED': 1337, 'INPUT_SIZE': [112, 112], 'EMBEDDING_SIZE': 512, 'DROP_LAST': True, 'WEIGHT_DECAY': 0.0005, 'MOMENTUM': 0.9, 'GPU_ID': [0], 'DEVICE': device(type='cuda', index=0), 'MULTI_GPU': False, 'NUM_EPOCH': 125, 'STAGES': [50, 70, 80], 'LR': 0.1, 'BATCH_SIZE': 256, 'DATA_ROOT': '/home/asus/Downloads/SFace-main/eval/lfw/', 'EVAL_PATH': '/home/asus/Downloads/SFace-main/eval/lfw', 'TARGET': ['lfw'], 'BACKBONE_NAME': 'IR_50', 'HEAD_NAME': 'ArcFace', 'BACKBONE_RESUME_ROOT': '', 'HEAD_RESUME_ROOT': '', 'WORK_PATH': './results/IR_50-sface-casia'}
+{'SEED': 1337, 'INPUT_SIZE': [112, 112], 'EMBEDDING_SIZE': 512, 'DROP_LAST': True, 'WEIGHT_DECAY': 0.0005, 'MOMENTUM': 0.9, 'GPU_ID': [0], 'DEVICE': device(type='cuda', index=0), 'MULTI_GPU': False, 'NUM_EPOCH': 125, 'STAGES': [50, 70, 80], 'LR': 0.1, 'BATCH_SIZE': 256, 'DATA_ROOT': '/home/asus/FacialData/positive/', 'EVAL_PATH': '/home/asus/Downloads/SFace-main/eval/lfw', 'TARGET': ['lfw'], 'BACKBONE_NAME': 'IR_50', 'HEAD_NAME': 'ArcFace', 'BACKBONE_RESUME_ROOT': '', 'HEAD_RESUME_ROOT': '', 'WORK_PATH': './results/IR_50-sface-casia'}
 ============================================================
-/home/asus/Downloads/SFace-main/eval/lfw/train.rec /home/asus/Downloads/SFace-main/eval/lfw/train.idx
-Number of Training Classes: 5749
+/home/asus/FacialData/positive/train.rec /home/asus/FacialData/positive/train.idx
+Number of Training Classes: 1098
 torch.Size([0, 3, 112, 112])
 ver lfw
 ============================================================
@@ -304,38 +304,31 @@ Parameter Group 1
 Optimizer Generated
 ============================================================
 Traceback (most recent call last):
-  File "/home/asus/Downloads/SFace-main/SFace_torch/train_SFace_torch.py", line 227, in <module>
-    features = BACKBONE(inputs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/backbone/model_irse.py", line 171, in forward
-    x = self.body(x)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
-    input = module(input)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/backbone/model_irse.py", line 64, in forward
-    res = self.res_layer(x)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
-    input = module(input)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 193, in forward
-    return F.batch_norm(
-  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/nn/functional.py", line 2812, in batch_norm
-    return torch.batch_norm(
-torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 784.00 MiB. GPU 0 has a total capacity of 3.81 GiB of which 646.06 MiB is free. Including non-PyTorch memory, this process has 3.17 GiB memory in use. Of the allocated memory 3.08 GiB is allocated by PyTorch, and 21.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  File "/home/asus/Downloads/SFace-main/SFace_torch/train_SFace_torch.py", line 224, in <module>
+    for inputs, labels in iter(trainloader):
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1465, in _next_data
+    return self._process_data(data)
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+    data.reraise()
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 398, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 211, in collate
+    return [
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 212, in <listcomp>
+    collate(samples, collate_fn_map=collate_fn_map)
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 155, in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+  File "/home/asus/Downloads/SFace-main/SFace_torch/env/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 272, in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+RuntimeError: stack expects each tensor to be equal size, but got [3, 82, 65] at entry 0 and [3, 250, 250] at entry 1
+

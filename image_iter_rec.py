@@ -83,11 +83,11 @@ class FaceDataset(data.Dataset):
 
 
 if __name__ == '__main__':
-    root = '../../Data/faces_webface_112x112/train.rec'
+    root = '/home/asus/FacialData/positive/train.rec'
 
     dataset = FaceDataset(path_imgrec =root, rand_mirror = False)
     trainloader = data.DataLoader(dataset, batch_size=32, shuffle=True, num_workers=2, drop_last=False)
-    embed()
+    # embed()
     print(len(dataset))
     for data, label in trainloader:
         #print(data.shape, label.shape)
